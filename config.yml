@@ -1,0 +1,18 @@
+
+# DisableChat version: 0.1 Configuration by stefa98
+
+Prefix: '&8[&6DisableChat&8]&r'
+
+Message:
+- '&cChat Disabilited.'
+- '&6'
+- '&eWebSite: stefa98.me'
+- '&eInfo: /help'
+
+DisabledMessage: '&6The Chat has been disabled!'
+
+EnabledMessage: '&6The Chat has been enabled!'
+
+NoPerm: '&cYou don''t have a permission!'
+
+ClearedChat: '&bThe Chat has been cleaned!'

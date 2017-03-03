@@ -1,0 +1,18 @@
+name: DisableChat
+version: 0.1
+author: stefa98
+main: me.stefa98.DisableChat.Main
+commands:
+      dc:
+        description: DisableChat Info
+        usage: /dc
+permissions:
+   dc.help:
+      description: Get Help
+      default: op
+   dc.clearchat:
+      description: Clear Chat
+      default: op
+   dc.toggglechat:
+      description: ToggleChat with /togglechat
+      default: op
