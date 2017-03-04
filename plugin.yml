@@ -4,7 +4,7 @@ author: stefa98
 main: me.stefa98.DisableChat.Main
 commands:
       dc:
-        description: DisableChat Info
+        description: DisableChat 
         usage: /dc
 permissions:
    dc.help:
