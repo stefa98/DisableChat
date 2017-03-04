@@ -1,5 +1,5 @@
 name: DisableChat
-version: 0.1
+version: 1.1
 author: stefa98
 main: me.stefa98.DisableChat.Main
 commands:

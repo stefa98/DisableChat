@@ -86,7 +86,7 @@ public class Main extends JavaPlugin implements Listener {
             else if (sender.hasPermission("dc.help")) {
                 sender.sendMessage(ChatColor.YELLOW + "*----------------------*");
                 sender.sendMessage(ChatColor.GRAY + "Plugin Made by:" + " " + ChatColor.BLUE + "stefa98");
-                sender.sendMessage(ChatColor.GRAY + "Version:" + " " + "0.1");
+                sender.sendMessage(ChatColor.GRAY + "Version:" + " " + "1.2");
                 sender.sendMessage(ChatColor.GRAY + "Help:" + " " + ChatColor.GREEN + "/dc help");
                 sender.sendMessage(ChatColor.YELLOW + "*----------------------*");
             }
