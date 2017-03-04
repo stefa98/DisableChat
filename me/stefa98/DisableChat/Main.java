@@ -19,13 +19,13 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable(){
-        Bukkit.getPluginManager().registerEvents(this, this);  //Registro gli eventi
+        Bukkit.getPluginManager().registerEvents(this, this);
         this.getConfig().options().copyDefaults(true);
         this.saveConfig();
-        if(getConfig().getString("Prefix") == null){ //Controllo se la config è stata creata se no la setto
+        if(getConfig().getString("Prefix") == null){
             getConfig().set("Prefix", "&8[&6DisableChat&8]&r");
-            getConfig().set("Message", "&cChat Disabilited."); //Setto nella config la stringa noChat
-            getConfig().set("DisabledMessage", "&6The Chat has been disabled!"); //Setto nella config la stringa disableChat
+            getConfig().set("Message", "&cChat Disabilited.");
+            getConfig().set("DisabledMessage", "&6The Chat has been disabled!");
             getConfig().set("EnabledMessage", "&6The Chat has been enabled!");
             getConfig().set("NoPerm", "&cYou don''t have a permission!");
             getConfig().set("ClearedChat", "&bThe Chat has been cleaned!");
@@ -37,19 +37,19 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable(){
-        saveConfig(); //Salvo la config prima di spegnere il plugin
+        saveConfig();
         System.out.print("[DisableChat] Plugin by Stefa98 Disabled");
     }
 
     @EventHandler
-    public void onChat(AsyncPlayerChatEvent e){//Controllo quando scrivono nella chat
-        if(!chatEnabled && !e.getPlayer().isOp()){ //Controllo se la chat e disabilitata e se il player non e' oppato
-            for(String s: getConfig().getStringList("Message"))e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', s )); //Invio un messaggio con scritto quello nella config
-            e.setCancelled(true); //Cancello l'evento cosi non compare il messaggio
+    public void onChat(AsyncPlayerChatEvent e){
+        if(!chatEnabled && !e.getPlayer().isOp()){
+            for(String s: getConfig().getStringList("Message"))e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', s ));
+            e.setCancelled(true);
         }
     }
 
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){ //Vedo quando eseguono un comando
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
         if(label.equalsIgnoreCase("dc")) {
             if (args.length != 0 && args[0] != null) {
                 if (args[0].equalsIgnoreCase("togglechat")) {
@@ -67,25 +67,9 @@ public class Main extends JavaPlugin implements Listener {
                 }
                 if (args[0].equalsIgnoreCase("clearchat")) {
                     if (sender.hasPermission("dc.clearchat")) {
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
-                        Bukkit.broadcastMessage("");
+                        for (int n = 0; n < 20; n++) {
+                            Bukkit.broadcastMessage("");
+                        }
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("Prefix") + getConfig().getString("ClearedChat")));
                     }
                 }
